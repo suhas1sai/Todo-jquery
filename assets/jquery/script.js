@@ -4,11 +4,10 @@ $(document).on('click','.add-todo',function(){
 var todoInputData=$(this).siblings('input').val();
 var todoListData=`<div class="row-parent">
   <div class="list-row">
-  <div class="list-num">`+i+`.</div>
   <div class="list-data">`+ todoInputData+`</div>
   <div class="check-todo"><i class="bi bi-check-circle-fill"></i></div>
   <div class="edit-todo"><i class="bi bi-pencil-square"></i></div>
-  <div class="remove-todo"><i class="bi bi-trash-fill text-danger"></i></div>
+  <div class="remove-todo"><i class="bi bi-trash-fill"></i></div>
   </div>
   <div class="list-error"></div></div>`;
 
@@ -24,7 +23,7 @@ $(this).parents('.todo-content').find('.error').empty();
 $(this).siblings('input').val('')
 });
 
-// add todo list on pressing Enter key 
+
 $(document).keydown(function (event) { 
      if (event.which == '') { 
          event.preventDefault();
@@ -34,12 +33,12 @@ $(document).keydown(function (event) {
 });
 
 
-// remove todo list script
+
 $(document).on('click','.remove-todo',function(){
  $(this).parent('.list-row').remove();
 })
 
-// edit todo list script
+
 $(document).on('click','.edit-todo',function(){
  $(this).attr('class','update-todo');
  $(this).html('&#x2713;');
@@ -55,7 +54,6 @@ $(document).on('click','.edit-todo',function(){
 
 });
 
-//update todo script
 $(document).on('click','.update-todo',function(){
  var listText= $(this).parent('.list-row').find('textarea').val();
  if($.trim(listText)=='')
@@ -70,7 +68,6 @@ $(document).on('click','.update-todo',function(){
 }
 });
 
-// line through the  todo list script
-$(document).on('click','.list-data',function(){
- $(this).toggleClass('line-through');
+$(document).on('click','.check-todo',function(){
+ $(this).parent('.list-row').toggleClass('line-through');
 });
