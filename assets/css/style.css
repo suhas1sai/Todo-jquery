@@ -1,5 +1,5 @@
 .todo-content{
-  width: 60%;
+  width: 90%;
   border: 1px solid lightgray;
   padding: 30px;
   margin: 15%;
@@ -13,14 +13,15 @@
   display:flex;
   width:100%;
   margin-bottom:20px;
+  height: 60px;
 }
 .todo-input input{
   width: 100%;
   padding: 5px 5px;
-  height: 30px;
+  height: 50px;
   border: 1px solid skyblue;
   border-radius: 10px;
-  font-size: 18px;
+  font-size: 45px;
 }
 .todo-input input:focus{
   outline:unset;
@@ -33,7 +34,7 @@
   background:transparent;
   border:none;
   color:green;
-  font-size:17px;
+  font-size:30px;
 }
 .list-row textarea:focus{
   outline:unset;
@@ -62,10 +63,6 @@
   padding: 0px 5px;
   cursor:pointer;
 }
-.list-num{
-  font-weight:bold;
-  padding-right:5px;
-}
 .todo-content .todo-list{
   list-style-type: none;
   padding-left: 0px;
@@ -84,7 +81,6 @@
   position:relative;
   word-break: break-all;
   display:flex;
-  font-size:18px;
   transition:.1s;
   cursor:pointer; 
 }
@@ -121,4 +117,31 @@
 }
 .check-todo{
   color: blue;
+}
+
+@media screen and (max-width: 1500px) {
+  body {
+    background-color: skyblue;
+  }
+  h2{
+    font-size: 50px;
+  }
+  p{
+    font-size: 30px;
+  }
+  input{
+    font-size: 50px;
+  }
+  .list-data{
+    font-size: 40px;
+  }
+  .todo-content{
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+  .check-todo .edit-todo .remove-todo{
+    font-size: 45px;
+  }
+
 }
