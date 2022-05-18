@@ -1,13 +1,12 @@
-// add to do list script
 var i=1;
 $(document).on('click','.add-todo',function(){
 var todoInputData=$(this).siblings('input').val();
 var todoListData=`<div class="row-parent">
   <div class="list-row">
-  <div class="list-data">`+ todoInputData+`</div>
-  <div class="check-todo"><i class="bi bi-check-circle-fill"></i></div>
-  <div class="edit-todo"><i class="bi bi-pencil-square"></i></div>
-  <div class="remove-todo"><i class="bi bi-trash-fill"></i></div>
+  <div class="list-data fw-bold">`+ todoInputData+`</div>
+  <div class="check-todo fs-1"><i class="bi bi-check-circle-fill"></i></div>
+  <div class="edit-todo fs-1"><i class="bi bi-pencil-square"></i></div>
+  <div class="remove-todo fs-1"><i class="bi bi-trash-fill"></i></div>
   </div>
   <div class="list-error"></div></div>`;
 
@@ -25,7 +24,7 @@ $(this).siblings('input').val('')
 
 
 $(document).keydown(function (event) { 
-     if (event.which == '') { 
+     if (event.which == '13') { 
          event.preventDefault();
          $('.add-todo').click(); 
          
@@ -71,3 +70,4 @@ $(document).on('click','.update-todo',function(){
 $(document).on('click','.check-todo',function(){
  $(this).parent('.list-row').toggleClass('line-through');
 });
+$(".list-row").css({"display":"inline-flex","justify-content":"center"});
